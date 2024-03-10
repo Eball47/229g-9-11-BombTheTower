@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine.UI;
 public class BirdController : MonoBehaviour
 {
     public float jumpForce = 5f;
@@ -26,10 +28,9 @@ public class BirdController : MonoBehaviour
             rb.velocity = Vector3.up * jumpForce;
             PlayFlapSound();
         }
-
-        
-
+        rb.AddForce(Vector3.forward * playerScore);
     }
+
     public void UpdateScoreText()
         {
             scoreText.text = $"{playerScore} / 11";
