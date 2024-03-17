@@ -19,7 +19,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"D:/งาน/BU/ปี 2/New folder/งาน/229g-9-11-BombTheTower/WebGL Builds;;;;;;;;;\"}"
+                "value": "{\"m_Value\":\"D:/งาน/BU/ปี 2/New folder/BombTheTower;D:/งาน/BU/ปี 2/New folder/งาน/229g-9-11-BombTheTower/WebGL Builds;;;;;;;;\"}"
             }
         ]
     }

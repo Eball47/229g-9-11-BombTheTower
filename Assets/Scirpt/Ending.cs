@@ -1,25 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Video;
 using UnityEngine.SceneManagement;
 
 public class Ending : MonoBehaviour
 {
-    public VideoPlayer videoPlayer; // Reference to the VideoPlayer component
+    public AudioSource audioSource; // Reference to the AudioSource component
+    public AudioClip audioClip; // Assign your audio clip in the Inspector
+    public string nextSceneName; // Name of the next scene to load
 
     void Start()
     {
-        // Get the VideoPlayer component attached to this GameObject
-        videoPlayer = GetComponent<VideoPlayer>();
+        audioSource.clip = audioClip;
 
-        // Subscribe to the video player's loopPointReached event
-        videoPlayer.loopPointReached += OnVideoEnd;
+        // Play the audio clip
+        audioSource.Play();
     }
 
-    void OnVideoEnd(VideoPlayer vp)
+    void Update()
     {
-        // Load the next scene when the video ends
-        SceneManager.LoadScene("Credit");
+        // Check if the audio clip has finished playing
+        if (!audioSource.isPlaying)
+        {
+            // If the audio has finished, transition to the next scene
+            SceneManager.LoadScene(nextSceneName);
+        }
     }
 }
