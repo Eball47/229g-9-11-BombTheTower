@@ -7,6 +7,6 @@ public class Button : MonoBehaviour
     // Start is called before the first frame update
     public void GoToNextScene()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Main");
     }
 }

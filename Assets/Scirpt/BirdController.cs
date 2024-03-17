@@ -26,7 +26,7 @@ public class BirdController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             rb.velocity = Vector3.up * jumpForce;
-            //audioSource.Play();
+            audioSource.Play();
         }
         rb.AddForce(Vector3.forward * playerScore);
     }
