@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Video;
 public class BirdController : MonoBehaviour
 {
     public float jumpForce = 5f;
@@ -13,12 +14,14 @@ public class BirdController : MonoBehaviour
     public int winScore;
     public AudioClip flapSound;
     private AudioSource audioSource;
+    private VideoPlayer videoPlayer;
     public TextMeshProUGUI scoreText;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        videoPlayer = GetComponent<VideoPlayer>();
         UpdateScoreText();
     }
     public void Update()
@@ -50,10 +53,15 @@ public class BirdController : MonoBehaviour
         {
             SceneManager.LoadScene("SampleScene");
         }
-        if (playerScore >= winScore)
+        if (other.CompareTag("Ending"))
         {
-            SceneManager.LoadScene("NextScene");
+            SceneManager.LoadScene("Ending");
         }
+    }
+    void OnVideoEnd(VideoPlayer vp)
+    {
+        // Load the next scene when the video ends
+        SceneManager.LoadScene("NextScene");
     }
 
 }
