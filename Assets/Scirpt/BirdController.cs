@@ -34,7 +34,7 @@ public class BirdController : MonoBehaviour
                 audioSource.PlayOneShot(flapSound);
             }
         }
-        rb.AddForce(Vector3.forward * playerScore * 2);
+        rb.AddForce(Vector3.forward * playerScore);
     }
 
     public void UpdateScoreText()
