@@ -692,7 +692,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -327, y: 25}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1210308833
 MonoBehaviour:
@@ -716,7 +716,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Sound from https://www.youtube.com
 
-    Model from https://sketchfab.com/feed'
+    Model from https://sketchfab.com/feed
+
+    Video
+    from https://www.youtube.com/shorts/vrNVknElO3Y'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
