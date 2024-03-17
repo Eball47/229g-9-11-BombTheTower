@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject playButton;
     public GameObject getReady;
+    public GameObject back;
     private void Awake()
     {
         Application.targetFrameRate = 60;
@@ -17,6 +19,7 @@ public class GameManager : MonoBehaviour
     {
         playButton.SetActive(false);
         getReady.SetActive(false);
+        back.SetActive(false);
         Time.timeScale = 1f;
         
     }
@@ -24,6 +27,8 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0f;
     }
-    
-    
+    public void Back()
+    {
+        SceneManager.LoadScene("Main");
+    }
 }

@@ -26,9 +26,12 @@ public class BirdController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             rb.velocity = Vector3.up * jumpForce;
-            audioSource.Play();
+            if (audioSource != null && flapSound != null)
+            {
+                audioSource.PlayOneShot(flapSound);
+            }
         }
-        rb.AddForce(Vector3.forward * playerScore);
+        rb.AddForce(Vector3.forward * playerScore * 2);
     }
 
     public void UpdateScoreText()
@@ -52,6 +55,5 @@ public class BirdController : MonoBehaviour
             SceneManager.LoadScene("NextScene");
         }
     }
-   
 
 }
